@@ -284,3 +284,11 @@ if (navbar) {
   });
   resizeObserver.observe(navbar);
 }
+// === Cerrar menú hamburguesa al hacer clic en botón si ya está abierto ===
+document.querySelector('.navbar-toggler')?.addEventListener('click', () => {
+  const menu = document.getElementById('navbarNav');
+  const bsCollapse = bootstrap.Collapse.getInstance(menu) || new bootstrap.Collapse(menu, { toggle: false });
+  if (menu.classList.contains('show')) {
+    bsCollapse.hide();
+  }
+});
