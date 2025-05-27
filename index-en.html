@@ -27,130 +27,67 @@
 
     <body class="d-flex flex-column min-vh-100">
 
-        <!-- NAVBAR MENU -->
-        <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
-            <div
-                class="container-fluid justify-content-between align-items-center">
+      <!-- NAVBAR MENU -->
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container-fluid justify-content-between align-items-center">
 
-                <!-- LOGO -->
-                <a class="navbar-brand" href="#">
-                    <img id="logoPrincipal" src="images/logo.svg"
-                        alt="Adiestra Kaninos Sevilla Logo" height="50">
-                </a>
+    <!-- LOGO -->
+    <a class="navbar-brand" href="#">
+      <img id="logoPrincipal" src="images/logo.svg" alt="Adiestra Kaninos Sevilla Logo" height="50">
+    </a>
 
-                <!-- HAMBURGER BUTTON -->
-                <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    <!-- HAMBURGER BUTTON -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-                <!-- MENU WITH ICONS ABOVE TEXT AND STAGGERED ANIMATION -->
-                <div class="collapse navbar-collapse justify-content-center"
-                    id="navbarNav">
-                    <ul class="navbar-nav animation-escalonada text-center">
-                        <li class="nav-item px-2">
-                            <a
-                                class="nav-link d-flex flex-column align-items-center"
-                                href="#inicio">
-                                <i class="fas fa-home fa-lg mb-1"></i>
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a
-                                class="nav-link d-flex flex-column align-items-center"
-                                href="#historia">
-                                <i class="fas fa-paw fa-lg mb-1"></i>
-                                Story
-                            </a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a
-                                class="nav-link d-flex flex-column align-items-center"
-                                href="#servicios">
-                                <i class="fas fa-dog fa-lg mb-1"></i>
-                                Services
-                            </a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a
-                                class="nav-link d-flex flex-column align-items-center"
-                                href="#galeria">
-                                <i class="fas fa-images fa-lg mb-1"></i>
-                                Gallery
-                            </a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a
-                                class="nav-link d-flex flex-column align-items-center"
-                                href="#tienda">
-                                <i class="fas fa-store fa-lg mb-1"></i>
-                                Shop
-                            </a>
-                        </li>
-                        <li class="nav-item px-2">
-                            <a
-                                class="nav-link d-flex flex-column align-items-center"
-                                href="#ubicacion">
-                                <i class="fas fa-map-marker-alt fa-lg mb-1"></i>
-                                Location
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- MENU WITH ICONS AND ANIMATION -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav animation-escalonada text-center">
+        <li class="nav-item px-2"><a class="nav-link d-flex flex-column align-items-center" href="#inicio"><i class="fas fa-home fa-lg mb-1"></i>Home</a></li>
+        <li class="nav-item px-2"><a class="nav-link d-flex flex-column align-items-center" href="#historia"><i class="fas fa-paw fa-lg mb-1"></i>Story</a></li>
+        <li class="nav-item px-2"><a class="nav-link d-flex flex-column align-items-center" href="#servicios"><i class="fas fa-dog fa-lg mb-1"></i>Services</a></li>
+        <li class="nav-item px-2"><a class="nav-link d-flex flex-column align-items-center" href="#galeria"><i class="fas fa-images fa-lg mb-1"></i>Gallery</a></li>
+        <li class="nav-item px-2"><a class="nav-link d-flex flex-column align-items-center" href="#tienda"><i class="fas fa-store fa-lg mb-1"></i>Shop</a></li>
+        <li class="nav-item px-2"><a class="nav-link d-flex flex-column align-items-center" href="#ubicacion"><i class="fas fa-map-marker-alt fa-lg mb-1"></i>Location</a></li>
+      </ul>
 
-                <!-- RIGHT BLOCK: REGISTER + CONTACT + PLAY + THEME + LANGUAGE + CART -->
-                <div class="d-flex align-items-center gap-3">
+      <!-- ICONS VISIBLE ONLY IN MOBILE -->
+      <div class="d-lg-none d-flex flex-wrap justify-content-center gap-3 mt-3">
+        <a href="#" class="nav-icon flash-icon" title="Sign up" data-bs-toggle="modal" data-bs-target="#modalRegistro"><i class="fas fa-user-plus"></i></a>
+        <a class="nav-icon" title="Contact us" data-bs-toggle="modal" data-bs-target="#modalContacto"><i class="fas fa-envelope"></i></a>
+        <div class="nav-icon play-card d-flex flex-column align-items-center justify-content-center" title="Watch presentation" data-bs-toggle="modal" data-bs-target="#videoModal">
+          <img id="imagenPerrito" src="images/sit.svg" alt="Puppy animation" class="svg-animado-card">
+          <i class="fas fa-play play-overlay-icon"></i>
+        </div>
+        <button id="toggleTheme" class="nav-icon" title="Toggle theme"><i class="fas fa-adjust"></i></button>
+        <button id="toggleIdioma" class="nav-icon" title="Toggle language"><i class="fas fa-globe"></i></button>
+        <button id="verCarrito" class="icon-button position-relative nav-icon" title="View cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="contadorCarrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+        </button>
+      </div>
+    </div>
 
-                    <!-- REGISTER MODAL BUTTON -->
-                    <a href="#" class="nav-icon flash-icon" title="Sign up"
-                        data-bs-toggle="modal" data-bs-target="#modalRegistro">
-                        <i class="fas fa-user-plus"></i>
-                    </a>
+    <!-- DESKTOP ICONS -->
+    <div class="d-none d-lg-flex align-items-center gap-3">
+      <a href="#" class="nav-icon flash-icon" title="Sign up" data-bs-toggle="modal" data-bs-target="#modalRegistro"><i class="fas fa-user-plus"></i></a>
+      <a class="nav-icon" title="Contact us" data-bs-toggle="modal" data-bs-target="#modalContacto"><i class="fas fa-envelope"></i></a>
+      <div class="nav-icon play-card d-flex flex-column align-items-center justify-content-center" title="Watch presentation" data-bs-toggle="modal" data-bs-target="#videoModal">
+        <img id="imagenPerrito" src="images/sit.svg" alt="Puppy animation" class="svg-animado-card">
+        <i class="fas fa-play play-overlay-icon"></i>
+      </div>
+      <button id="toggleTheme" class="nav-icon" title="Toggle theme"><i class="fas fa-adjust"></i></button>
+      <button id="toggleIdioma" class="nav-icon" title="Toggle language"><i class="fas fa-globe"></i></button>
+      <button id="verCarrito" class="icon-button position-relative nav-icon" title="View cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="contadorCarrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+      </button>
+    </div>
 
-                    <!-- Contact (opens modal) -->
-                    <a class="nav-icon" title="Contact us"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalContacto">
-                        <i class="fas fa-envelope"></i>
-                    </a>
+  </div>
+</nav>
 
-                    <!-- Animated play square -->
-                    <div
-                        class="nav-icon play-card d-flex flex-column align-items-center justify-content-center"
-                        title="Watch presentation" data-bs-toggle="modal"
-                        data-bs-target="#videoModal">
-                        <img id="imagenPerrito" src="images/sit.svg"
-                            alt="Puppy animation"
-                            class="svg-animado-card">
-                        <i class="fas fa-play play-overlay-icon"></i>
-                    </div>
-
-                    <!-- Dark/light theme toggle -->
-                    <button id="toggleTheme" class="nav-icon"
-                        title="Toggle theme">
-                        <i class="fas fa-adjust"></i>
-                    </button>
-
-                    <!-- Language -->
-                    <button id="toggleIdioma" class="nav-icon"
-                        title="Cambiar idioma">
-                        <i class="fas fa-globe"></i>
-                    </button>
-
-                    <!-- Cart (icon styled like others) -->
-                    <button id="verCarrito"
-                        class="icon-button position-relative nav-icon"
-                        title="View cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span id="contadorCarrito"
-                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            0
-                        </span>
-                    </button>
-                </div>
-            </nav>
             <!-- MODAL CART -->
             <div class="modal fade" id="modalCarrito" tabindex="-1"
                 aria-labelledby="modalCarritoLabel" aria-hidden="true">
